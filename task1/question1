@@ -1,0 +1,5 @@
+A better approach to choosing the range [a,b] in the bisection method is to automatically detect an interval where the function changes sign,  where f(a)*f(b)<0. This ensures that there is at least one real root within the interval.
+Instead of manually guessing values, a more better and easier method is to use a loop to test a broader interval, such as from −10 to 10, with small steps. At each step, we check the function at two points,one is x and the other is x+step.If one is positive and other is negative,that means, the function crossed the x-axis, so a root is between them.
+We check this using : f(x)⋅f(x+step)<0.
+This helps us to find a right range to start the bisection method.
+
