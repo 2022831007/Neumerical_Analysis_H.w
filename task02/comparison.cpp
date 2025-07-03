@@ -2,6 +2,7 @@
 using namespace std;
 double Es = 1e-4;
 int max_iter = 100;
+double trueRoot = 0.5; 
 double f(double x) {
     return 4 * x * x + 3 * x - 3;
 }
@@ -28,9 +29,9 @@ void RegulaFalsi(double a, double b) {
         }
         
     }
-
+     double relativeError = fabs((trueRoot - c) / trueRoot) * 100;
     cout << "Regula Falsi Method:\n";
-    cout << "Root : " << fixed << setprecision(6) << c<< ", Iterations: " << iteration<< endl;
+    cout << "Root : " << fixed << setprecision(6) << c  << ", Iterations: " << iteration << ", True Relative Error (%): " << relativeError << endl;
 }
 void Bisection(double a, double b) {
     if (f(a) * f(b) >= 0) {
@@ -56,9 +57,9 @@ void Bisection(double a, double b) {
             a = c;
         }
     }
-
+    double relativeError = fabs((trueRoot - c) / trueRoot) * 100;
     cout << "Bisection Method:\n";
-    cout << "Root : " << fixed << setprecision(6) << c<< ", Iterations: " << iteration << endl;
+    cout << "Root : " << fixed << setprecision(6) << c  << ", Iterations: " << iteration  << ", True Relative Error (%): " << relativeError << endl;
 }
 
 int main() {
